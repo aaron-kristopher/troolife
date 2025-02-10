@@ -1,0 +1,115 @@
+:root {
+	--white: #fff;
+	--black: #000;
+	--grey: #C4C4C4;
+	--primary: #007377;
+	--secondary: #F6DBA0;
+}
+
+body {
+	font-family: "Manrope", serif !important;
+	padding-top: 90px;
+}
+
+p {
+	font-size: 16px !important;
+}
+
+#navbar {
+	background: var(--primary);
+	font-weight: 600 !important;
+	font-size: 20px !important;
+}
+
+a.nav-link {
+	color: var(--white) !important;
+	position: relative;
+}
+
+a.nav-link::after {
+	content: "";
+	height: 1px;
+	width: calc(100% - 20px);
+	background: var(--white);
+	position: absolute;
+	opacity: 0;
+	left: 10px;
+	bottom: 4px;
+	transition: all 0.2s;
+	pointer-events: none;
+}
+
+a.nav-link:hover::after,
+a.nav-link:focus::after {
+	opacity: 1;
+}
+
+ul li a {
+	font-size: 16px !important;
+	text-decoration: none;
+	color: var(--white);
+}
+
+@media (max-width: 540px) {
+	ul li a {
+		font-size: 14px !important;
+	}
+}
+
+ul li a img {
+	color: var(--secondary);
+}
+
+.navbar-toggler {
+	padding: 0 !important;
+	border: none !important;
+}
+
+#member-block {
+	background: var(--secondary);
+	height: 90px;
+}
+
+#member-name {
+	font-weight: 700;
+}
+
+#hero {
+	background-color: rgba(1, 43, 75, 0.5);
+}
+
+#hero h1 {
+	font-family: "Poppins";
+	font-weight: 600;
+	color: var(--white);
+}
+
+.background-clip {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	width: 100%;
+}
+
+#hero a {
+	font: 700 18px "Manrope";
+	text-decoration: none;
+	color: var(--primary);
+	background: var(--white);
+	padding: 8px 8px 8px 24px;
+	border-radius: 54px;
+	transition: all 0.2s;
+}
+
+#hero a span img {
+	background: var(--primary);
+	padding: 10px 11px;
+	margin: 0px 0 4px 10px;
+	border-radius: 20px;
+}
+
+#hero a:hover {
+	color: var(--white);
+	background: var(--primary);
+}
