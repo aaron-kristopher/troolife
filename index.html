@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TrooLife</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="https://external-content.duckduckgo.com/ip3/www.troolife.com.ico">
 
     <!--BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,6 +18,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <!--GOOGLE ICONS-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_right" />
+
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -40,10 +46,10 @@
                         <img class="mb-1" src="images/icons/shopping_cart.svg" alt="cart">
                     </a>
                 </li>
-                <li class="d-none d-md-inline px-2 mx-1 nav-item">
+                <li class="d-none d-md-inline px-0 px-xl-2 mx-1 nav-item">
                     <img class="mb-1" src="images/icons/line.png">
                 </li>
-                <li class="d-none d-xl-inline px-2 mx-1 nav-item">
+                <li class="d-none d-xl-inline px-0 px-xl-2 mx-1 nav-item">
                     <a href="#">
                         <img class="mb-1 pe-1" src="images/icons/account_circle.svg" alt="profile">
                         <span class="d-none d-lg-inline">My Office</span>
@@ -60,35 +66,35 @@
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mx-auto" id="navbar-navlist">
-                    <li class="nav-item px-2">
+                    <li class="nav-item px-0 px-xl-2">
                         <a data-scroll class="nav-link" href="#mission">Mission</a>
                     </li>
-                    <li class="nav-item px-2">
+                    <li class="nav-item px-0 px-xl-2">
                         <a data-scroll class="nav-link" href="#lifeline">LifeLine</a>
                     </li>
-                    <li class="nav-item px-2">
+                    <li class="nav-item px-0 px-xl-2">
                         <a data-scroll class="nav-link" href="#nutrition">Nutrition</a>
                     </li>
-                    <li class="nav-item px-2">
+                    <li class="nav-item px-0 px-xl-2">
                         <a data-scroll class="nav-link" href="#referral">Free by Referral </a>
                     </li>
-                    <li class="nav-item px-2">
-                        <a data-scroll class="nav-link" href="#relatins">Relations</a>
+                    <li class="nav-item px-0 px-xl-2">
+                        <a data-scroll class="nav-link" href="#relatins">Public Relations</a>
                     </li>
-                    <li class="nav-item px-2">
+                    <li class="nav-item px-0 px-xl-2">
                         <a data-scroll class="nav-link" href="#company">Company</a>
                     </li>
-                    <li class="nav-item px-2">
+                    <li class="nav-item px-0 px-xl-2">
                         <a data-scroll class="nav-link" href="#management">Management</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!--END OF NAVBAR-->
 
     <!--START OF MEMBER BLOCK-->
-    <div class="container-fluid px-sm-5 d-flex align-items-center justify-content-between" id="member-block">
+
+    <section class="container-fluid px-sm-5 d-flex align-items-center justify-content-between" id="member-block">
         <div class="d-flex align-items-center">
             <img src="images/icons/Ellipse.png" height="55" alt="profile">
             <p class="mb-0 ps-3" id="member-name">Amanda Jones</p>
@@ -97,21 +103,121 @@
             <img src="images/icons/contact.svg" alt="contact">
             <img class="ps-3" src="images/icons/messages.svg" alt="messages">
         </div>
-    </div>
-
-    <!--END OF MEMBER BLOCK-->
+    </section>
 
     <!--START OF HERO-->
-    <div class="d-flex align-items-center justify-content-center w-100 vh-100" id="hero">
-        <div class="content col-5 align-items-center text-center">
-            <h1 class="pb-4">TrooLife is dedicated to enhancing the quality and longevity of lives</h1>
-            <a href="#">Find out why <span><img src="images/icons/right_caret.svg"></span></a>
+
+    <section class="container-fluid  position-relative" id="hero">
+        <div class="row h-100 align-items-center text-center overflow-hidden">
+            <div class="col-11 col-md-8 col-lg-6 col-xl-7 col-xxl-5 mx-auto">
+                <h1>TrooLife is dedicated to enhancing the quality and longevity of lives.</h1>
+                <button class="my-5 ps-4 pe-2 btn btn-primary  rounded-5 d-flex align-items-center mx-auto"
+                    type="button">Find out
+                    why <span class="ms-2 rounded-5 d-flex align-items-center justify-content-center"><i
+                            class="material-symbols-outlined">chevron_right</i></span></button>
+
+            </div>
         </div>
-        <video autoplay loop plays-inline muted class="background-clip">
+        <video loop autoplay playsinline muted preload="auto" class="background-clip">
             <source src="images/hero.mp4" type="video/mp4">
         </video>
-    </div>
-    <!--END OF HERO-->
+
+    </section>
+
+    <!--START OF MISSION-->
+    <section class="container-fluid py-3 py-md-5" id="mission">
+        <div class="row py-4 py-md-5 text-center justify-content-center position-relative">
+            <h2 class="pb-5">Our Mission<span class="mission-underline"></span></h2>
+            <p class="mb-3 col-12 col-md-10 col-lg-9 col-xl-7">Our TrooLife mission is to empower Members to make a true
+                difference in
+                their
+                own
+                personal health,
+                wellness and longevity. For them to enhance their own quality of life, and then to inspire a better
+                quality of life for their family, friends and associates.</p>
+        </div>
+    </section>
+
+    <!--START OF RELATIONSHIP -->
+    <section class="py-4 py-md-5 container-fluid" id="relationship">
+        <div class="ps-sm-5 row align-items-center">
+            <div class="p-0 pb-3 pb-md-0 offset-md-1 my-4 col-12 col-md-6 order-md-last">
+                <img src="images/running.png" class="p-0 col-12 col-md-6 order-md-last right-image"
+                    alt="old man cooking">
+            </div>
+            <div class="offset-lg-1 col-12 col-md-5 col-lg-4 text-white order-md-first">
+                <h4 class="pb-2 pb-md-4">The things you consistently do</h4>
+                <p class="pb-2  pe-3 pb-lg-4">to enhance your mind, your body, your relationships and your finances –
+                    will
+                    enhance
+                    your quality of
+                    life - and the quality of your extended life.</p>
+                <p class="pe-3">Also be aware that the things that you do not bother to do for your mind, body,
+                    relationships and
+                    finances – will reduce your quality of life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--START OF HEALTH-->
+    <section class="py-4 py-md-5 container-fluid" id="health">
+        <div class="row align-items-center">
+            <div class="my-4 col-12 col-md-6 p-0">
+                <img src="images/health.webp" class="p-0 pb-3 col-12 col-md-6 order-md-last left-image"
+                    alt="girls running">
+            </div>
+            <div class="ms-lg-5 ps-xl-4 col-12 offset-sm-1 offset-md-0 col-sm-10 col-md-5 col-lg-4">
+                <h4 class="pb-2 pb-md-4">Health experts say</h4>
+                <p class="pb-2 pe-2 pb-lg-4">we should have five servings or fresh fruits and vegetables every day,
+                    however
+                    this is not practical or possible for most active adults. This is why these same experts recommend
+                    supplementing your diet with high-quality vitamins, minerals, antioxidants and amino acids to help
+                    provide optimal health, vitality and mental clarity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--START OF LIFELINE-->
+    <section class="py-4 py-md-5 container-fluid" id="lifeline">
+        <div class="ps-sm-5 row align-items-center">
+            <div class="p-0 pb-3 pb-md-0 offset-md-1 my-4 col-12 col-md-6 order-md-last">
+                <img src="images/lifeline.webp" class="p-0 col-12 col-md-6 order-md-last right-image" alt="simu liu">
+            </div>
+            <div class="pt-0 pt-xl-5 offset-lg-1 col-12 col-md-5 col-lg-4 order-md-first">
+                <h4 class="pb-2 pb-md-4">Through our LifeLine program,</h4>
+                <p class="pb-2 pe-3 pe-lg-0 pb-lg-4">TrooLife will act as your personal wellness coach, encouraging you
+                    to eat
+                    well, to maintain a healthy activity level and to help you de-stress from your work and family
+                    pressures. LifeLine will also advise you on how to optimize your important personal relationships
+                    with your family, friends and associates, to enhance your own life, and theirs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--START OF COMMITTED-->
+    <section class="py-4 py-md-5 container-fluid" id="committed">
+        <div class="row align-items-center">
+            <div class="my-4 col-12 col-md-6 p-0">
+                <img src="images/committed.webp" class="p-0 pb-3 col-12 col-md-6 order-md-last left-image"
+                    alt="committed girls">
+            </div>
+            <div class="ms-lg-5 ps-xl-4 col-12 offset-sm-1 offset-md-0 col-sm-10 col-md-5 col-lg-4">
+                <h4 class="pb-2 pb-md-4">TrooLife is also committed</h4>
+                <p class="pb-2 pe-3 pb-lg-4">to providing you excellent product quality and value, with the means to
+                    receive your nutritional supplements and wellness coaching for free, from a few simple referrals.
+                    Please take a few minutes to find out how.</p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12">
+                <button class="my-5 ps-4 pe-2 btn btn-secondary rounded-5 d-flex align-items-center mx-auto"
+                    type="button">Get Started<span
+                        class="ms-2 rounded-5 d-flex align-items-center justify-content-center"><i
+                            class="material-symbols-outlined">chevron_right</i></span></button>
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

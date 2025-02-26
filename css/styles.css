@@ -7,22 +7,29 @@
 }
 
 body {
-	font-family: "Manrope", serif !important;
+	font-family: "Manrope", serif;
 	padding-top: 90px;
 }
 
 p {
-	font-size: 16px !important;
+	font-size: clamp(16px, 2vw, 24px);
 }
+
+
+/*#####################################*/
+/*######                         ######*/
+/*######  START OF NAV SECTION   ######*/
+/*######                         ######*/
+/*#####################################*/
 
 #navbar {
 	background: var(--primary);
-	font-weight: 600 !important;
-	font-size: 20px !important;
+	font-weight: 600;
+	font-size: 20px;
 }
 
 a.nav-link {
-	color: var(--white) !important;
+	color: var(--white);
 	position: relative;
 }
 
@@ -45,14 +52,14 @@ a.nav-link:focus::after {
 }
 
 ul li a {
-	font-size: 16px !important;
+	font-size: 16px;
 	text-decoration: none;
 	color: var(--white);
 }
 
 @media (max-width: 540px) {
 	ul li a {
-		font-size: 14px !important;
+		font-size: 14px;
 	}
 }
 
@@ -61,21 +68,38 @@ ul li a img {
 }
 
 .navbar-toggler {
-	padding: 0 !important;
-	border: none !important;
+	padding: 0;
+	border: none;
 }
+
+/*########################################*/
+/*######                            ######*/
+/*######  START OF MEMBER SECTION   ######*/
+/*######                            ######*/
+/*########################################*/
 
 #member-block {
 	background: var(--secondary);
 	height: 90px;
 }
 
+#member-bloc p {
+	font-size: 16px;
+}
+
 #member-name {
 	font-weight: 700;
 }
 
+/*#####################################*/
+/*######                         ######*/
+/*######  START OF HERO SECTION  ######*/
+/*######                         ######*/
+/*#####################################*/
+
 #hero {
 	background-color: rgba(1, 43, 75, 0.5);
+	height: calc(100vh - 80px);
 }
 
 #hero h1 {
@@ -89,27 +113,126 @@ ul li a img {
 	right: 0;
 	bottom: 0;
 	z-index: -1;
-	width: 100%;
+	object-fit: cover;
+	min-width: 100%;
+	min-height: 100%;
 }
 
-#hero a {
-	font: 700 18px "Manrope";
-	text-decoration: none;
+
+.btn-primary {
+	font-size: 18px;
+	font-weight: 600;
 	color: var(--primary);
 	background: var(--white);
-	padding: 8px 8px 8px 24px;
-	border-radius: 54px;
+	border-width: 0;
 	transition: all 0.2s;
 }
 
-#hero a span img {
+.btn-primary:hover {
 	background: var(--primary);
-	padding: 10px 11px;
-	margin: 0px 0 4px 10px;
-	border-radius: 20px;
+	color: var(--white);
 }
 
-#hero a:hover {
+.btn-primary span {
+	width: 1.8rem;
+	height: 1.8rem;
+	background: var(--primary);
+	color: var(--white);
+	transition: all 0.2s;
+}
+
+.btn-primary:hover span {
+	background: var(--white);
+	color: var(--primary);
+}
+
+/*##########################################*/
+/*######                              ######*/
+/*######   START OF MISSION SECTION   ######*/
+/*######                              ######*/
+/*##########################################*/
+
+
+#mission h2 {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	font-size: clamp(24px, 4vw, 48px);
+}
+
+/*#mission .mission-underline::before {*/
+/*	position: absolute;*/
+/*	content: "";*/
+/*	left: clamp(33%, calc(10vw + 23%), 46%);*/
+/*	bottom: 50%;*/
+/*	height: 2px;*/
+/*	width: min(5rem, 30%);*/
+/*	background: var(--primary);*/
+/**/
+/*}*/
+
+h4 {
+	font-weight: 600;
+	font-size: clamp(20px, 3vw, 30px)
+}
+
+.right-image {
+	float: right;
+	width: 93%;
+	max-height: 580px;
+	border-radius: 300px 0px 0px 300px;
+}
+
+.left-image {
+	float: left;
+	width: 93%;
+	max-height: 580px;
+	border-radius: 0px 300px 300px 0px;
+}
+
+/*###############################################*/
+/*######                                   ######*/
+/*######   START OF RELATIONSHIP SECTION   ######*/
+/*######                                   ######*/
+/*###############################################*/
+
+#relationship {
+	background: var(--primary);
+}
+
+/*#################################################*/
+/*######                                     ######*/
+/*######   START OF RELATIONSHIP LIFELINE    ######*/
+/*######                                     ######*/
+/*#################################################*/
+
+#lifeline {
+	background: var(--secondary);
+}
+
+.btn-secondary {
+	font-size: 18px;
+	font-weight: 600;
 	color: var(--white);
 	background: var(--primary);
+	border-width: 0;
+	transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+	background: var(--white);
+	border: 2px solid var(--primary);
+	color: var(--primary);
+}
+
+.btn-secondary span {
+	width: 1.8rem;
+	height: 1.8rem;
+	background: var(--white);
+	color: var(--primary);
+	transition: all 0.2s;
+}
+
+.btn-secondary:hover span {
+	background: var(--primary);
+	color: var(--white);
 }
