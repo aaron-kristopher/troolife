@@ -11,6 +11,21 @@ body {
 	padding-top: 90px;
 }
 
+h2 {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	font-size: clamp(24px, 4vw, 48px);
+}
+
+h4 {
+	font-weight: 600;
+	font-size: clamp(20px, 3vw, 30px)
+}
+
+h5 {
+	font-weight: 800;
+}
+
 p {
 	font-size: clamp(16px, 2vw, 24px);
 }
@@ -83,7 +98,7 @@ ul li a img {
 	height: 90px;
 }
 
-#member-bloc p {
+#member-block p {
 	font-size: 16px;
 }
 
@@ -106,6 +121,17 @@ ul li a img {
 	font-family: "Poppins";
 	font-weight: 600;
 	color: var(--white);
+}
+
+
+#hero .underline::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50px;
+	width: 60px;
+	height: 2px;
+	background: var(--secondary);
 }
 
 .background-clip {
@@ -153,11 +179,6 @@ ul li a img {
 /*##########################################*/
 
 
-#mission h2 {
-	font-family: "Poppins", sans-serif;
-	font-weight: 600;
-	font-size: clamp(24px, 4vw, 48px);
-}
 
 /*#mission .mission-underline::before {*/
 /*	position: absolute;*/
@@ -170,10 +191,6 @@ ul li a img {
 /**/
 /*}*/
 
-h4 {
-	font-weight: 600;
-	font-size: clamp(20px, 3vw, 30px)
-}
 
 .right-image {
 	float: right;
@@ -235,4 +252,20 @@ h4 {
 .btn-secondary:hover span {
 	background: var(--primary);
 	color: var(--white);
+}
+
+/*##################################################*/
+/*######                                      ######*/
+/*######   START OF RELATIONSHIP POTENTIAL    ######*/
+/*######                                      ######*/
+/*##################################################*/
+
+#potential {
+	background: var(--primary);
+}
+
+#potential .wrapper {
+	border: 2px solid var(--grey);
+	border-radius: 20px;
+	width: clamp(295px, 25vw, 418px);
 }
