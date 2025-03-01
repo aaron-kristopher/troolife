@@ -19,11 +19,13 @@ h2 {
 
 h4 {
 	font-weight: 600;
-	font-size: clamp(20px, 3vw, 30px)
+	font-size: clamp(20px, 3vw, 30px);
 }
 
 h5 {
 	font-weight: 800;
+	font-size: clamp(18px, 2vw, 30px);
+	color: red;
 }
 
 p {
@@ -36,6 +38,10 @@ p {
 /*######  START OF NAV SECTION   ######*/
 /*######                         ######*/
 /*#####################################*/
+
+nav {
+	height: 90px;
+}
 
 #navbar {
 	background: var(--primary);
@@ -186,6 +192,10 @@ ul li a img {
 	color: var(--primary);
 }
 
+.btn-sm {
+	font-size: 16px;
+}
+
 /*##########################################*/
 /*######                              ######*/
 /*######   START OF MISSION SECTION   ######*/
@@ -270,4 +280,38 @@ ul li a img {
 	border: 2px solid var(--grey);
 	border-radius: 20px;
 	width: clamp(295px, 25vw, 418px);
+}
+
+.card-item {
+	padding-block: 80px;
+}
+
+.card-img {
+	height: 89px;
+}
+
+.potential-card {
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 30px
+}
+
+.footer-link {
+	text-decoration: none;
+}
+
+.footer-text {
+	font-weight: 700;
+	font-size: 17px;
+	color: #000;
+}
+
+.footer-line {
+	border-top: 1px solid #C4C4C4;
+	height: 1px;
+	display: flex;
+}
+
+.credits {
+	font-size: 20px;
 }
