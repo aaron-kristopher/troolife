@@ -43,6 +43,10 @@ p {
 	font-size: 20px;
 }
 
+a:hover {
+	color: var(--white);
+}
+
 a.nav-link {
 	color: var(--white);
 	position: relative;
@@ -66,20 +70,30 @@ a.nav-link:focus::after {
 	opacity: 1;
 }
 
+.nav-item>.nav-link,
+.nav-item-text {
+	font-size: clamp(14px, 1.062vw, 20px);
+	font-weight: 500;
+}
+
 ul li a {
 	font-size: 16px;
 	text-decoration: none;
 	color: var(--white);
 }
 
-@media (max-width: 540px) {
-	ul li a {
-		font-size: 14px;
-	}
-}
-
 ul li a img {
 	color: var(--secondary);
+}
+
+#cart-counter {
+	font-size: clamp(10px, 1.062vw, 16px);
+	display: inline;
+	vertical-align: top;
+	background: var(--secondary);
+	color: var(--primary);
+	padding: 1px 5px;
+	border-radius: 25px;
 }
 
 .navbar-toggler {
@@ -129,7 +143,7 @@ ul li a img {
 	position: absolute;
 	bottom: 0;
 	left: 50px;
-	width: 60px;
+	width: 5px;
 	height: 2px;
 	background: var(--secondary);
 }
@@ -178,31 +192,19 @@ ul li a img {
 /*######                              ######*/
 /*##########################################*/
 
-
-
-/*#mission .mission-underline::before {*/
-/*	position: absolute;*/
-/*	content: "";*/
-/*	left: clamp(33%, calc(10vw + 23%), 46%);*/
-/*	bottom: 50%;*/
-/*	height: 2px;*/
-/*	width: min(5rem, 30%);*/
-/*	background: var(--primary);*/
-/**/
-/*}*/
-
+.right-image,
+.left-image {
+	width: 93%;
+	max-height: 580px;
+}
 
 .right-image {
 	float: right;
-	width: 93%;
-	max-height: 580px;
 	border-radius: 300px 0px 0px 300px;
 }
 
 .left-image {
 	float: left;
-	width: 93%;
-	max-height: 580px;
 	border-radius: 0px 300px 300px 0px;
 }
 

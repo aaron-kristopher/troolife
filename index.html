@@ -37,28 +37,29 @@
             </button>
 
             <a class="navbar-brand m-0" href="#">
-                <img class="h-25" src="images/logo.svg" alt="Troolife">
+                <img src="images/logo.svg" alt="Troolife">
             </a>
 
-            <ul class="text-end nav order-lg-2">
-                <li class="mx-1 nav-item">
+            <ul class="text-end nav flex-nowrap order-lg-2">
+                <li class="mx-1 pe-2 nav-item">
                     <a href="#">
                         <img class="mb-1" src="images/icons/shopping_cart.svg" alt="cart">
+                        <span id="cart-counter">0</span>
                     </a>
                 </li>
-                <li class="d-none d-md-inline px-0 px-xl-2 mx-1 nav-item">
-                    <img class="mb-1" src="images/icons/line.png">
+                <li class="px-0 px-xxl-2 mx-1 nav-item d-none d-lg-inline" id="line">
+                    <img class="mb-1" src="images/icons/line.png" alt="|">
                 </li>
-                <li class="d-none d-xl-inline px-0 px-xl-2 mx-1 nav-item">
+                <li class="d-none d-lg-inline px-0 px-xxl-2 mx-1 nav-item" id="profile">
                     <a href="#">
                         <img class="mb-1 pe-1" src="images/icons/account_circle.svg" alt="profile">
-                        <span class="d-none d-lg-inline">My Office</span>
+                        <span class="d-none d-lg-inline nav-item-text">My Office</span>
                     </a>
                 </li>
-                <li class="ps-2 ms-0 ms-sm-1 nav-item">
+                <li class="ps-0 ps-xl-2 ms-0 ms-sm-1 nav-item" id="language">
                     <a href="#">
                         <img class="mb-1 pe-1" src="images/icons/language.svg" alt="language">
-                        <span>English</span>
+                        <span class="nav-item-text">English</span>
                         <img class="pb-1 ps-1" src="images/icons/dropdown.svg" alt="dropdown">
                     </a>
                 </li>
@@ -66,26 +67,30 @@
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mx-auto" id="navbar-navlist">
-                    <li class="nav-item px-0 px-xl-2">
-                        <a data-scroll class="nav-link" href="#mission">Mission</a>
+                    <li class="nav-item px-0 px-xxl-2">
+                        <a class="nav-link pe-0 pe-xl-2" href="#mission">Mission</a>
                     </li>
-                    <li class="nav-item px-0 px-xl-2">
-                        <a data-scroll class="nav-link" href="#lifeline">LifeLine</a>
+                    <li class="nav-item px-0 px-xxl-2">
+                        <a class="nav-link pe-0 pe-xl-2" href="#lifeline">LifeLine</a>
                     </li>
-                    <li class="nav-item px-0 px-xl-2">
-                        <a data-scroll class="nav-link" href="#nutrition">Nutrition</a>
+                    <li class="nav-item px-0 px-xxl-2">
+                        <a class="nav-link pe-0 pe-xl-2" href="#nutrition">Nutrition</a>
                     </li>
-                    <li class="nav-item px-0 px-xl-2">
-                        <a data-scroll class="nav-link" href="#referral">Free by Referral </a>
+                    <li class="nav-item px-0 px-xxl-2">
+                        <a class="nav-link pe-0 pe-xl-2" href="#referral">Free by Referral </a>
                     </li>
-                    <li class="nav-item px-0 px-xl-2">
-                        <a data-scroll class="nav-link" href="#relatins">Public Relations</a>
+                    <li class="nav-item px-0 px-xxl-2">
+                        <a class="nav-link pe-0 pe-xl-2" href="#relatins">Public Relations</a>
                     </li>
-                    <li class="nav-item px-0 px-xl-2">
-                        <a data-scroll class="nav-link" href="#company">Company</a>
+                    <li class="nav-item px-0 px-xxl-2">
+                        <a class="nav-link pe-0 pe-xl-2" href="#company">Company</a>
                     </li>
-                    <li class="nav-item px-0 px-xl-2">
-                        <a data-scroll class="nav-link" href="#management">Management</a>
+                    <li class="nav-item px-0 px-xxl-2">
+                        <a class="nav-link pe-0 pe-xl-2" href="#management">Management</a>
+                    </li>
+
+                    <li class="d-inline d-lg-none px-0 nav-item" id="profile">
+                        <a class="nav-link pe-0 pe-xl-2" href="#">My Office</a>
                     </li>
                 </ul>
             </div>
