@@ -147,9 +147,9 @@ ul li a img {
 #hero .underline::before {
 	content: "";
 	position: absolute;
-	bottom: 0;
-	left: 50px;
-	width: 5px;
+	bottom: 4px;
+	left: clamp(36px, 4vw, 51px);
+	width: clamp(38px, 6.8vw, 59px);
 	height: 2px;
 	background: var(--secondary);
 }
@@ -201,6 +201,16 @@ ul li a img {
 /*######   START OF MISSION SECTION   ######*/
 /*######                              ######*/
 /*##########################################*/
+
+.mission-underline::before {
+	background: var(--primary);
+	content: "";
+	height: 2px;
+	width: 92px;
+	position: absolute;
+	bottom: clamp(15px, 25%, 25px);
+	left: calc(50% - 46px);
+}
 
 .right-image,
 .left-image {
@@ -279,15 +289,15 @@ ul li a img {
 #potential .wrapper {
 	border: 2px solid var(--grey);
 	border-radius: 20px;
-	width: clamp(295px, 25vw, 418px);
+	width: clamp(295px, 32vw, 418px);
 }
 
 .card-item {
-	padding-block: 80px;
+	padding-block: clamp(40px, 10vw, 80px);
 }
 
 .card-img {
-	height: 89px;
+	height: clamp(60px, 10vw, 84px);
 }
 
 .potential-card {
