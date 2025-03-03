@@ -238,14 +238,83 @@ ul li a img {
 	background: var(--primary);
 }
 
-/*#################################################*/
-/*######                                     ######*/
-/*######   START OF RELATIONSHIP LIFELINE    ######*/
-/*######                                     ######*/
-/*#################################################*/
+.things-underline {
+	position: relative;
+}
+
+.things-underline::after {
+	content: "";
+	position: absolute;
+	bottom: clamp(4px, 0.8vw, 20px);
+	height: 1.3px;
+	width: clamp(4px, 100% + -1vw, 15em);
+	left: 0;
+	background-color: var(--secondary);
+}
+
+/*#################################*/
+/*######                     ######*/
+/*######   START OF HEALTH   ######*/
+/*######                     ######*/
+/*#################################*/
+
+.experts-underline {
+	position: relative;
+}
+
+.experts-underline::after {
+	content: "";
+	position: absolute;
+	bottom: clamp(4px, 0.8vw, 20px);
+	height: 1.3px;
+	width: clamp(4px, 100% + -1vw, 9em);
+	left: 0;
+	background-color: var(--primary);
+}
+
+/*###################################*/
+/*######                       ######*/
+/*######   START OF LIFELINE   ######*/
+/*######                       ######*/
+/*###################################*/
+
+.lifeline-program-underline {
+	position: relative;
+}
+
+.lifeline-program-underline::after {
+	content: "";
+	position: absolute;
+	bottom: clamp(4px, 0.8vw, 20px);
+	height: 1.3px;
+	width: clamp(4px, 100% + -1vw, 14.2em);
+	left: 0;
+	background-color: var(--primary);
+}
 
 #lifeline {
 	background: var(--secondary);
+}
+
+
+/*####################################*/
+/*######                        ######*/
+/*######   START OF COMMITTED   ######*/
+/*######                        ######*/
+/*####################################*/
+
+.committed-underline {
+	position: relative;
+}
+
+.committed-underline::after {
+	content: "";
+	position: absolute;
+	bottom: clamp(4px, 0.8vw, 20px);
+	height: 1.3px;
+	width: clamp(4px, 100% + -1vw, 12.5em);
+	left: 0;
+	background-color: var(--primary);
 }
 
 .btn-secondary {
@@ -306,6 +375,24 @@ ul li a img {
 	gap: 30px
 }
 
+/*##################################*/
+/*######                      ######*/
+/*######   START OF FOOTER    ######*/
+/*######                      ######*/
+/*##################################*/
+
+
+.footer-logo {
+	width: clamp(282px, 30vw, 457px);
+	margin-left: clamp(15px, 100vw, 0px);
+	margin-left: clamp(0px, 0vw, 50px);
+	height: auto;
+}
+
+.img-logo {
+	margin-right: 0em;
+}
+
 .footer-link {
 	text-decoration: none;
 }
@@ -318,10 +405,81 @@ ul li a img {
 
 .footer-line {
 	border-top: 1px solid #C4C4C4;
-	height: 1px;
-	display: flex;
+	height: 30px;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 3rem;
 }
 
 .credits {
 	font-size: 20px;
+	flex: 1;
+	min-width: 250px;
+	max-width: 1200px;
+	flex-basis: 820px;
+	text-align: center;
+	font-weight: 500;
+	color: #007377;
+}
+
+.policy {
+	flex: 1;
+	flex-basis: 295px;
+	min-width: 250px;
+	text-align: end;
+}
+
+.terms {
+	flex: 1;
+	min-width: 250px;
+	flex-basis: 440px;
+	text-align: center;
+}
+
+.add-footer {
+	text-decoration: none;
+	color: #000;
+	font-weight: 700;
+}
+
+.add-footer:hover {
+	color: #007377;
+}
+
+@media screen and (max-width: 1217px) {
+
+	.credits,
+	.terms,
+	.policy {
+		text-align: center;
+	}
+
+	.credits {
+		order: 1;
+	}
+}
+
+@media screen and (max-width: 1672px) {
+
+	.credits,
+	.terms,
+	.policy {
+		flex-basis: auto;
+	}
+}
+
+@media screen and (max-width: 485px) {
+
+	.terms,
+	.policy {
+		flex-basis: 0;
+	}
+
+	.credits {
+		order: 1;
+		height: 7.5rem;
+	}
 }
