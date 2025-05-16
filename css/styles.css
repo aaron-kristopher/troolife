@@ -32,6 +32,9 @@ p {
 	font-size: clamp(16px, 2vw, 24px);
 }
 
+.text-primary {
+	color: var(--primary) !important;
+}
 
 /*#####################################*/
 /*######                         ######*/
@@ -130,6 +133,16 @@ ul li a img {
 	font-weight: 700;
 }
 
+.scrolled-down {
+	transform: translateY(-100%);
+	transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+	transform: translateY(0);
+	transition: all 0.3s ease-in-out;
+}
+
 /*#####################################*/
 /*######                         ######*/
 /*######  START OF HERO SECTION  ######*/
@@ -148,7 +161,8 @@ ul li a img {
 }
 
 
-#hero .underline::before {
+#hero .underline::before,
+.underline::before {
 	content: "";
 	position: absolute;
 	bottom: 4px;
@@ -328,7 +342,7 @@ ul li a img {
 	font-weight: 600;
 	color: var(--white);
 	background: var(--primary);
-	border-width: 0;
+	border: 2px solid var(--primary);
 	transition: all 0.2s;
 }
 
@@ -372,7 +386,8 @@ ul li a img {
 }
 
 .card-img {
-	height: clamp(60px, 10vw, 84px);
+	/* height: clamp(60px, 10vw, 84px); */
+	height: clamp(80px, 20vw, 150px);
 }
 
 .potential-card {
@@ -488,4 +503,111 @@ ul li a img {
 		order: 1;
 		height: 7.5rem;
 	}
+}
+
+/*#######################################*/
+/*######                           ######*/
+/*######  START OF LOGIN SECTION   ######*/
+/*######                           ######*/
+/*#######################################*/
+
+.background-radial-gradient {
+	background-color: hsl(180, 100%, 23%);
+	background-image: radial-gradient(650px circle at 0% 0%,
+			hsl(180, 100%, 35%) 15%,
+			hsl(180, 100%, 30%) 35%,
+			hsl(180, 100%, 20%) 75%,
+			hsl(180, 100%, 19%) 80%,
+			transparent 100%),
+		radial-gradient(1250px circle at 100% 100%,
+			hsl(180, 100%, 45%) 15%,
+			hsl(180, 100%, 30%) 35%,
+			hsl(180, 100%, 20%) 75%,
+			hsl(180, 100%, 19%) 80%,
+			transparent 100%);
+}
+
+#radius-shape-1 {
+	height: 220px;
+	width: 220px;
+	top: -60px;
+	left: -130px;
+	background: radial-gradient(#007377, #F6DBA0);
+	overflow: hidden;
+}
+
+#radius-shape-2 {
+	border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+	bottom: -60px;
+	right: -110px;
+	width: 300px;
+	height: 300px;
+	background: radial-gradient(#007377, #F6DBA0);
+	overflow: hidden;
+}
+
+.bg-glass {
+	background-color: hsla(0, 0%, 100%, 0.9) !important;
+	backdrop-filter: saturate(200%) blur(25px);
+}
+
+/*#####################################*/
+/*######                         ######*/
+/*######        ABOUT US         ######*/
+/*######                         ######*/
+/*#####################################*/
+
+#about-us {
+	background-color: var(--white);
+	height: calc(100vh - 80px);
+}
+
+#about-us h1 {
+	font-family: "Poppins";
+	font-weight: 600;
+	color: var(--black);
+}
+
+.background-clips {
+	/* position: absolute; */
+	right: 0;
+	bottom: 0;
+	/* z-index: -1; */
+	object-fit: cover;
+	max-width: 100%;
+	max-height: 100%;
+}
+   
+/*##################################################*/
+/*######                                      ######*/
+/*######            MEMBER PROFILES           ######*/
+/*######                                      ######*/
+/*##################################################*/
+
+#member-profile {
+	background: var(--primary);
+}
+   
+#member-profile .wrapper {
+	background-color: var(--white);
+	border: 4px solid var(--grey);
+	box-shadow: 5px 6px var(--grey);
+	border-radius: 20px 20px 60px 20px;
+	width: clamp(295px, 32vw, 418px);
+}
+   
+.card-item {
+	padding-block: clamp(40px, 10vw, 80px);
+}
+   
+.card-img-1 {
+	height: clamp(100px, 50vw, 200px);
+	width: clamp(100px, 50vw, 200px);
+	border: 2px solid var(--secondary);
+}
+   
+.member-card {
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 20px
 }
