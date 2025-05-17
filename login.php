@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!$hasErrors) {
-        $sql = "SELECT userID, username, email, first_name, last_name, password, profile_picture, birthday FROM User WHERE username = ?";
+        $sql = "SELECT userID, adminID, username, email, first_name, last_name, password, profile_picture, birthday, is_active FROM user WHERE username = ?";
         
         if ($stmt = $conn->prepare($sql)) {
             $stmt->bind_param("s", $param_username);
@@ -42,24 +42,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->store_result();
                 
                 if ($stmt->num_rows == 1) {
-                    $stmt->bind_result($userID, $db_username, $email, $first_name, $last_name, $hashed_password, $profile_picture, $birthday);
+                    $stmt->bind_result($userID, $adminID, $db_username, $email, $first_name, $last_name, $hashed_password, $profile_picture, $birthday, $is_active);
+                    $is_admin = 0; // Default to not admin
                     if ($stmt->fetch()) {
                         if (password_verify($password, $hashed_password)) {
-                            session_regenerate_id(true);
-                            
-                            $_SESSION["is_logged_in"] = true;
-                            $_SESSION["userID"] = $userID;
-                            $_SESSION["current_user"] = [
-                                "username" => $db_username,
-                                "email" => $email,
-                                "first-name" => $first_name,
-                                "last-name" => $last_name,
-                                "profile-picture" => $profile_picture,
-                                "birthday" => $birthday
-                            ];
-                            
-                            header("location: index.php");
-                            exit;
+                            // Check if user is active
+                            if (!$is_active) {
+                                $usernameErr = "* Account is inactive. Please contact an administrator.";
+                                $hasErrors = true;
+                            } else {
+                                session_regenerate_id(true);
+                                
+                                $_SESSION["is_logged_in"] = true;
+                                $_SESSION["userID"] = $userID;
+                                // Check if user is an admin based on adminID
+                                if ($adminID !== null) {
+                                    $is_admin = 1; // User is an admin
+                                }
+                                
+                                $_SESSION["current_user"] = [
+                                    "username" => $db_username,
+                                    "email" => $email,
+                                    "first-name" => $first_name,
+                                    "last-name" => $last_name,
+                                    "profile-picture" => $profile_picture,
+                                    "birthday" => $birthday,
+                                    "is_admin" => (bool)$is_admin,
+                                    "is_active" => (bool)$is_active
+                                ];
+                                
+                                header("location: index.php");
+                                exit;
+                            }
                         } else {
                             $passwordErr = "* Invalid credentials";
                             $hasErrors = true;

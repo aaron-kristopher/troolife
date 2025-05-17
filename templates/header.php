@@ -79,6 +79,9 @@ if (!isset($_SESSION["current_user"])) {
                         <ul class="dropdown-menu">
                             <?php if ($_SESSION["is_logged_in"]): ?>
                                 <li><a class="dropdown-item" href="./profile.php">Profile</a></li>
+                                <?php if (isset($_SESSION["current_user"]["is_admin"]) && $_SESSION["current_user"]["is_admin"] === true): ?>
+                                    <li><a class="dropdown-item" href="./admin.php">Admin Dashboard</a></li>
+                                <?php endif; ?>
                                 <li><a class="dropdown-item" href="./about.php">About Us</a></li>
                                 <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
                             <?php else: ?>
@@ -130,6 +133,11 @@ if (!isset($_SESSION["current_user"])) {
                     <li class="d-inline d-lg-none px-0 nav-item">
                         <a class="nav-link pe-0 pe-xl-2" href="profile.php">My Profile</a>
                     </li>
+                    <?php if (isset($_SESSION["current_user"]["is_admin"]) && $_SESSION["current_user"]["is_admin"] === true): ?>
+                    <li class="d-inline d-lg-none px-0 nav-item">
+                        <a class="nav-link pe-0 pe-xl-2" href="admin.php">Admin Dashboard</a>
+                    </li>
+                    <?php endif; ?>
                     <?php endif; ?>
                 </ul>
             </div>
