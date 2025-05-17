@@ -31,19 +31,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!$hasErrors) {
+        // First check if the credentials are in the user table
+        $userFound = false;
         $sql = "SELECT userID, adminID, username, email, first_name, last_name, password, profile_picture, birthday, is_active FROM user WHERE username = ?";
         
         if ($stmt = $conn->prepare($sql)) {
             $stmt->bind_param("s", $param_username);
-            
             $param_username = $username;
             
             if ($stmt->execute()) {
                 $stmt->store_result();
                 
                 if ($stmt->num_rows == 1) {
+                    $userFound = true;
                     $stmt->bind_result($userID, $adminID, $db_username, $email, $first_name, $last_name, $hashed_password, $profile_picture, $birthday, $is_active);
                     $is_admin = 0; // Default to not admin
+                    
                     if ($stmt->fetch()) {
                         if (password_verify($password, $hashed_password)) {
                             // Check if user is active
@@ -79,14 +82,62 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $hasErrors = true;
                         }
                     }
-                } else {
-                    $usernameErr = "* Invalid credentials";
-                    $hasErrors = true;
                 }
             } else {
                 echo "Something went wrong. Please try again later.";
             }
             $stmt->close();
+        }
+        
+        // If not found in user table or password didn't match, check admin table
+        if (!$userFound || $hasErrors) {
+            $hasErrors = false; // Reset errors to check admin table
+            $sql = "SELECT adminID, username, email, first_name, last_name, password FROM admin WHERE username = ?";
+            
+            if ($stmt = $conn->prepare($sql)) {
+                $stmt->bind_param("s", $param_username);
+                $param_username = $username;
+                
+                if ($stmt->execute()) {
+                    $stmt->store_result();
+                    
+                    if ($stmt->num_rows == 1) {
+                        $stmt->bind_result($adminID, $db_username, $email, $first_name, $last_name, $hashed_password);
+                        
+                        if ($stmt->fetch()) {
+                            if (password_verify($password, $hashed_password)) {
+                                session_regenerate_id(true);
+                                
+                                $_SESSION["is_logged_in"] = true;
+                                $_SESSION["adminID"] = $adminID;
+                                $_SESSION["current_user"] = [
+                                    "username" => $db_username,
+                                    "email" => $email,
+                                    "first-name" => $first_name,
+                                    "last-name" => $last_name,
+                                    "profile-picture" => null, // Admins may not have profile pictures
+                                    "birthday" => null, // Admins may not have birthdays stored
+                                    "is_admin" => true, // Admin is always an admin
+                                    "is_active" => true // Admins are always active
+                                ];
+                                
+                                header("location: index.php");
+                                exit;
+                            } else {
+                                $passwordErr = "* Invalid credentials";
+                                $hasErrors = true;
+                            }
+                        }
+                    } else if (!$userFound) { // Only show error if not found in both tables
+                        $usernameErr = "* Invalid credentials";
+                        $hasErrors = true;
+                    }
+                } else {
+                    echo "Something went wrong. Please try again later.";
+                }
+                $stmt->close();
+            }
+        }
         }
     }
     $conn->close();
